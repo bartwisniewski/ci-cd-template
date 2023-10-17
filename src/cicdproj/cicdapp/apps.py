@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class CicdappConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'cicdapp'
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "cicdapp"
