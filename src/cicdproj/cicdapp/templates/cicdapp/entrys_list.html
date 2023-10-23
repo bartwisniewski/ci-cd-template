@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}
+Entries
+{% endblock %}
+{% block content %}
+<div>
+    <h4>Entries:</h4>
+    <ul>
+        {% for entry in object_list %}
+            <li>
+                <a href="{% url 'entry' entry.id %}">
+                    <span>{{entry.text|truncatewords:20}}</span>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    <div>
+        <a href="{% url 'entry-create' %}">|+|</a>
+    </div>
+</div>
+{% endblock %}
