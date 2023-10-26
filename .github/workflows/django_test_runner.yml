@@ -25,4 +25,4 @@ jobs:
         
     - name: Run Tests
       run: |
-        python src/cicdproject/manage.py test src/cicdproject/
+        python src/cicdproj/manage.py test src/cicdproj/
