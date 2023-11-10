@@ -27,7 +27,6 @@ jobs:
         IMAGE_TAG: ${{ github.run_id }}
       run: |
         echo "Running on run id: $IMAGE_TAG"
-        export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain amini --domain-owner 166795380930 --region eu-central-1 --query authorizationToken --output text --duration-seconds 900`
-        docker build -f Dockerfile --build-arg CODEARTIFACT_AUTH_TOKEN_ARG=$CODEARTIFACT_AUTH_TOKEN -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
+        docker build -f Dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
