@@ -149,3 +149,4 @@ media
 
 # terraform
 .terraform/
+terraform.*
