@@ -12,7 +12,7 @@
         "protocol": "tcp"
       }
     ],
-    "command": ["python", "-m", "pip", "freeze"],
+    "command": ["gunicorn", "-w", "3", "-b", ":8000", "cicdproj.wsgi:application"],
     "environment": [],
     "logConfiguration": {
       "logDriver": "awslogs",
